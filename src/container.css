@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+.top-bar {
+  height: 10%;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gallery {
+  height: 86%;
+}
+
+.option {
+  margin-right: 2.6%;
+  margin-top: 0.4%;
+  height: 100%;
+  width: 3%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.option > div {
+  color: gray;
+}
+
+.option > img {
+  height: 54%;
+}
+
+.indicate > div {
+  color: black;
+}
+
+.indicate > img {
+  border-radius: 50%;
+  background-color: lightgray;
+}
