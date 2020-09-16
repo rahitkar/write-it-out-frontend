@@ -1,0 +1,9 @@
+.quill {
+  height: 84%;
+  width: 40%;
+  margin: 12px auto;
+}
+
+.ql-toolbar.ql-snow {
+  background: lightgray;
+}
