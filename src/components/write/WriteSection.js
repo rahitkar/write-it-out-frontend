@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../home/Input';
 import api from '../../api';
+import AddTitlePopup from './AddTitlePopup';
 import AcknowledgementPopup from './AcknowledgementPopup';
 
 import './editor.css';
@@ -24,21 +25,8 @@ export default () => {
     changePopupVisibility(true);
   };
 
+  const popup = isPopupVisible ? <AddTitlePopup onClick={addPoemToDb} /> : '';
   const acknowledgementPopup = isPosted ? <AcknowledgementPopup /> : '';
-
-  let popup = '';
-  if (isPopupVisible) {
-    popup = (
-      <div className='popup'>
-        <Input
-          onClick={addPoemToDb}
-          placeHolder='add title...'
-          class='title-popup'
-          action='Publish'
-        />
-      </div>
-    );
-  }
 
   return (
     <div>
