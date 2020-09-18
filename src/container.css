@@ -2,17 +2,40 @@ body {
   font-family: sans-serif;
   height: 100vh;
   width: 100vw;
+  background-color: lightgray;
+}
+
+.bar {
+  overflow-y: hidden;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  background: white;
 }
 
 .top-bar {
   height: 10%;
-  border: 1px solid gray;
-  display: flex;
   justify-content: flex-end;
 }
 
-.gallery {
-  height: 86%;
+.Home-gallery {
+  height: fit-content;
+  padding: 0.6%;
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+
+.Explore-gallery {
+  height: fit-content;
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+
+.Write-gallery {
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+  padding: 6% 0% 0% 30%;
 }
 
 .option {
@@ -41,4 +64,23 @@ body {
 .indicate > img {
   border-radius: 50%;
   background-color: lightgray;
+}
+
+.top-bar-1 {
+  height: 6%;
+  justify-content: space-evenly;
+}
+
+.option-1 {
+  margin: auto 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.option-1 > div {
+  color: gray;
+}
+
+.indicate-1 > div {
+  color: rgb(32, 190, 211);
 }
