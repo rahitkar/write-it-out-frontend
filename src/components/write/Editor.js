@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import Publish from './Publish';
+import api from '../../api';
 import './editor.css';
 
 const Editor = (props) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(props.value);
+  const handleChange = (html, delta, source, editor) => {
+    setInput({ html, text: editor.getText() });
+  };
 
-  const handleChange = (input) => {
-    setInput(input);
+  const handleClick = () => {
+    props.addPoem(input);
+    api.addPoemData(input.text).then(setInput({ html: '', text: '' }));
   };
 
   return (
-    <ReactQuill
-      onChange={handleChange}
-      value={input}
-      modules={Editor.modules}
-      formats={Editor.formats}
-      placeholder='Write it out...'
-    />
+    <div>
+      <ReactQuill
+        onChange={handleChange}
+        value={input.html}
+        modules={Editor.modules}
+        formats={Editor.formats}
+        placeholder='Write it out...'
+      />
+      <Publish action='Compose' onClick={handleClick} />
+    </div>
   );
 };
 
