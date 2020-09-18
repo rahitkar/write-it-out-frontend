@@ -3,21 +3,28 @@ import { BrowserRouter } from 'react-router-dom';
 import Links from './Links';
 import Gallery from './Gallery';
 
-import Editor from './components/write/Editor';
+import Home from './components/home/Home';
 import Explore from './components/explore/Explore';
-import './container.css';
+import WriteSection from './components/write/WriteSection';
 
-const Home = (props) => <h1>Home</h1>;
+import HomeIcon from './home.svg';
+import ExploreIcon from './explore.svg';
+import WriteIcon from './write.svg';
+
+const names = ['Home', 'Explore', 'Write'];
+const components = [<Home />, <Explore />, <WriteSection />];
 
 function App() {
   return (
     <BrowserRouter>
-      <Links names={['home', 'explore', 'write']} />
-      <Gallery
-        class='gallery'
-        names={['home', 'explore', 'write']}
-        components={[<Home />, <Explore />, <Editor />]}
+      <Links
+        names={names}
+        srcs={[HomeIcon, ExploreIcon, WriteIcon]}
+        activeClass='indicate'
+        class='option'
+        rapperClass='top-bar'
       />
+      <Gallery names={names} components={components} />
     </BrowserRouter>
   );
 }

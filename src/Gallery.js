@@ -4,9 +4,7 @@ import './container.css';
 
 const Gallery = (props) => {
   return (
-    <div className={props.class}>
-      <Routes names={props.names} components={props.components} />
-    </div>
+    <Routes names={props.names} components={props.components} />
   );
 };
 
