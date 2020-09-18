@@ -9,6 +9,5 @@ export default (props) => {
     api.fetchPoemsData().then(updatePoemData);
   }, []);
 
-  console.log(poemsData);
   return <PoemPosts poemsData={poemsData} />;
 };

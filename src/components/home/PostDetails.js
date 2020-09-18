@@ -7,7 +7,6 @@ export default (props) => {
       <img alt={name} src={url} />
       <div>
         <span className='name'>{name}</span>
-        <span className='time-stamp'>{props.timeStamp}</span>
       </div>
     </div>
   );

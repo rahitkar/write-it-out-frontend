@@ -3,7 +3,6 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Publish from './Publish';
 import api from '../../api';
-import './editor.css';
 
 const Editor = (props) => {
   const [input, setInput] = useState(props.value);

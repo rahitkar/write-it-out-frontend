@@ -6,23 +6,15 @@ api.fetchPoemsData = () => {
     .then((details) => JSON.parse(details));
 };
 
-// {
-//   timeStamp: 'just now',
-//   title: 'Every night',
-//   poem:
-//     'I gaze for a home,\nnLike a nomad,\nRunning around In dreary desert sand.\nTired, But filled with hope.\nLeft alone, But with thousands of stars\nAnd a silver moon.\nSmiling over my head,\nBefore I fall asleep.',
-// }
-
-api.addPoemData = (poemData) => {
+api.addPoemData = ({ title, poem }) => {
   return fetch('/api/addPoemData', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      timeStamp: 'just now',
-      title: 'Every night',
-      poem: poemData,
+      title,
+      poem,
     }),
-  }).then((res) => res.json());
+  });
 };
 
 export default api;

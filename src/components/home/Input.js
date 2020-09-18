@@ -5,7 +5,7 @@ const Input = (props) => {
   const [input, updateInput] = useState(props.value);
 
   const addInput = () => {
-    props.onClick();
+    props.onClick(input);
     updateInput('');
   };
 
@@ -15,10 +15,10 @@ const Input = (props) => {
 
   return (
     <div className={props.class}>
-      <input
+      <textarea
         value={input}
         onChange={handleChange}
-        placeholder='write your comment...'
+        placeholder={props.placeHolder}
       />
       <Publish onClick={addInput} action={props.action} />
     </div>

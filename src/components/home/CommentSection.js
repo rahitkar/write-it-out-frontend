@@ -5,7 +5,7 @@ import Input from './Input';
 export default (props) => {
   return (
     <div className=''>
-      <Input action='comment' class='comment-section' />
+      <Input action='comment' class='comment-section' placeHolder='write your comment...' />
     </div>
   );
 };
