@@ -17,6 +17,7 @@ const components = [<Home />, <Explore />, <WriteSection />];
 function App() {
   return (
     <BrowserRouter>
+      <div className='logo'>WriteItOut</div>
       <Links
         names={names}
         srcs={[HomeIcon, ExploreIcon, WriteIcon]}

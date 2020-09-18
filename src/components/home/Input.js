@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
+import Publish from '../write/Publish';
 
 const Input = (props) => {
   const [input, updateInput] = useState(props.value);
 
-  const handleKeyPress = (event) => {
-    event.preventDefault();
-    if (input) {
-      // props.onKeyPress(input);
-      updateInput('');
-    }
+  const addInput = () => {
+    props.onClick();
+    updateInput('');
   };
 
   const handleChange = (event) => {
@@ -16,13 +14,14 @@ const Input = (props) => {
   };
 
   return (
-    <form onSubmit={handleKeyPress} className={props.className}>
+    <div className={props.class}>
       <input
         value={input}
         onChange={handleChange}
         placeholder='write your comment...'
       />
-    </form>
+      <Publish onClick={addInput} action={props.action} />
+    </div>
   );
 };
 
