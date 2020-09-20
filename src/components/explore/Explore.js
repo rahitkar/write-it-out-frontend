@@ -18,7 +18,7 @@ const categories = [
   'Short-story',
 ];
 
-export default (props) => {
+export default () => {
   const [components, setComponents] = useState([]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default (props) => {
         categories={['All', ...categories]}
         categoryOf='Explore/'
         activeClass='indicate-1'
-        class='option-1'
+        className='option-1'
         rapperClass='top-bar-1'
       />
       <Gallery

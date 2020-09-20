@@ -3,17 +3,18 @@ import './container.css';
 import LinkElement from './LinkElement';
 
 const Links = (props) => {
-  const links = props.paths.map((path, indx) => {
+  const { paths, categoryOf, categories, srcs, activeClass, className } = props;
+  const links = paths.map((path, indx) => {
     return (
       <LinkElement
-        categoryOf={props.categoryOf}
+        categoryOf={categoryOf}
         key={indx}
         id={indx}
         path={path}
-        category={props.categories[indx]}
-        src={props.srcs[indx]}
-        activeClass={props.activeClass}
-        class={`${props.class}`}
+        category={categories[indx]}
+        src={srcs[indx]}
+        activeClass={activeClass}
+        className={`${className}`}
       />
     );
   });

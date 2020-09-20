@@ -25,7 +25,7 @@ function App() {
         categories={categories}
         srcs={[HomeIcon, ExploreIcon, WriteIcon]}
         activeClass='indicate'
-        class='option'
+        className='option'
         rapperClass='top-bar'
       />
       <Gallery paths={paths} categories={categories} components={components} />
