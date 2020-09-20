@@ -10,10 +10,10 @@ export default (props) => {
     <NavLink
       activeClassName={props.activeClass}
       className={props.class}
-      to={`/${props.categoryOf}${props.name}`}
+      to={`/${props.categoryOf}${props.path}`}
     >
       {img}
-      <div>{props.name}</div>
+      <div>{props.path}</div>
     </NavLink>
   );
 };

@@ -5,7 +5,7 @@ import './container.css';
 const Gallery = (props) => {
   return (
     <Routes
-      names={props.names}
+      paths={props.paths}
       categoryOf={props.categoryOf}
       components={props.components}
     />

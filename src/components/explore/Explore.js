@@ -37,14 +37,14 @@ export default (props) => {
   return (
     <BrowserRouter>
       <Links
-        names={['All', ...categories]}
+        paths={['All', ...categories]}
         categoryOf='Explore/'
         activeClass='indicate-1'
         class='option-1'
         rapperClass='top-bar-1'
       />
       <Gallery
-        names={['All', ...categories]}
+        paths={['All', ...categories]}
         categoryOf='Explore/'
         components={components}
       />

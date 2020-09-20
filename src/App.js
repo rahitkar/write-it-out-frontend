@@ -11,7 +11,7 @@ import HomeIcon from './home.svg';
 import ExploreIcon from './explore.svg';
 import WriteIcon from './write.svg';
 
-const names = ['Home', 'Explore', 'Write'];
+const paths = ['Home', 'Explore', 'Write'];
 const components = [<Home />, <Explore />, <WriteSection />];
 
 function App() {
@@ -19,13 +19,13 @@ function App() {
     <BrowserRouter>
       <div className='logo'>WriteItOut</div>
       <Links
-        names={names}
+        paths={paths}
         srcs={[HomeIcon, ExploreIcon, WriteIcon]}
         activeClass='indicate'
         class='option'
         rapperClass='top-bar'
       />
-      <Gallery names={names} components={components} />
+      <Gallery paths={paths} components={components} />
     </BrowserRouter>
   );
 }
