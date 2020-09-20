@@ -18,19 +18,23 @@ const categories = [
   'Short-story',
 ];
 
+const filterPoems = (poemsData) =>
+  categories.map((category) => {
+    return poemsData.filter((poemData) => category === poemData.category);
+  });
+
+const getPoemsComponent = (poemsData) =>
+  poemsData.map((filteredPoemsData) => (
+    <PoemPosts poemsData={filteredPoemsData} />
+  ));
+
 export default () => {
   const [components, setComponents] = useState([]);
 
   useEffect(() => {
     api.fetchPoemsData().then((poemsData) => {
-      const filteredPoemsData = categories.map((category) => {
-        return poemsData.filter((poemData) => category === poemData.category);
-      });
-      setComponents(
-        [poemsData, ...filteredPoemsData].map((filteredPoemsData) => (
-          <PoemPosts poemsData={filteredPoemsData} />
-        ))
-      );
+      const filteredPoemsData = filterPoems(poemsData);
+      setComponents(getPoemsComponent([poemsData, ...filteredPoemsData]));
     });
   }, []);
 
