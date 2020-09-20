@@ -4,8 +4,10 @@ import './container.css';
 
 export default (props) => {
   const routes = props.paths.map((path, indx) => (
-    <Route key={indx} path={`/${props.categoryOf}${path}`}>
-      <div className={`${path}-gallery`}>{props.components[indx]}</div>
+    <Route exact key={indx} path={`/${props.categoryOf}${path}`}>
+      <div className={`${props.categories[indx]}-gallery`}>
+        {props.components[indx]}
+      </div>
     </Route>
   ));
   return <Switch>{routes}</Switch>;

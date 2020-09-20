@@ -6,6 +6,7 @@ const Gallery = (props) => {
   return (
     <Routes
       paths={props.paths}
+      categories={props.categories}
       categoryOf={props.categoryOf}
       components={props.components}
     />

@@ -10,6 +10,7 @@ const Links = (props) => {
         key={indx}
         id={indx}
         path={path}
+        category={props.categories[indx]}
         src={props.srcs[indx]}
         activeClass={props.activeClass}
         class={`${props.class}`}
