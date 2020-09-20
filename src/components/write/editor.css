@@ -2,40 +2,77 @@
   padding: 2%;
   overflow-y: hidden;
   position: fixed;
-  height: 68%;
+  height: 74%;
   width: 34%;
-  margin: 10% 0% 0% 31%;
+  margin: 6% 0% 0% 31%;
   background: white;
 }
 
 .editor > textarea {
-  height: 100%;
   width: 100%;
   outline: none;
   border: none;
   font-family: sans-serif;
+  resize: none;
 }
 
-.Compose {
-  margin-left: 29.4%;
-  margin-top: -1%;
-  position: fixed;
+.title-section {
+  font-size: x-large;
 }
 
-.title-popup {
-  margin: 22% 0% 0% 42%;
-  position: fixed;
-  height: 14%;
-  background: rgba(158, 152, 152, 0.173);
-  padding: 2%;
+.poem-section {
+  height: 58%;
+}
+
+.Publish {
+  margin-left: 84%;
+  margin-top: 1%;
+}
+
+.Publish > button {
+  border: 5px solid lightgray;
+  padding: 10% 22% 10% 22%;
+  border-radius: 30px;
+  outline: none;
+}
+
+.active {
+  cursor: pointer;
+}
+
+.inactive {
+  cursor: not-allowed;
 }
 
 .acknowledgement-popup {
   width: 11%;
   padding: 1%;
-  margin-left: 82%;
-  margin-top: 44.6%;
+  margin-left: 53%;
   position: fixed;
   background-color: rgb(45, 204, 45);
   font-family: sans-serif;
+}
+
+.tag {
+  color: gray;
+  margin-left: 2%;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  height: 16%;
+}
+
+.categories > div {
+  height: 30%;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 1%;
+  cursor: pointer;
+}
+
+.indicateCategory {
+  background-color: lightgray;
 }

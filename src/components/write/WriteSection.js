@@ -1,43 +1,55 @@
 import React, { useState } from 'react';
 import Input from '../home/Input';
-import api from '../../api';
-import AddTitlePopup from './AddTitlePopup';
+import Category from './Category';
+import Publish from './Publish';
 import AcknowledgementPopup from './AcknowledgementPopup';
+
+import api from '../../api';
 
 import './editor.css';
 
 export default () => {
   const [poem, setPoem] = useState('');
-  const [isPopupVisible, changePopupVisibility] = useState(false);
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
   const [isPosted, changePostStatus] = useState(false);
 
-  const addPoemToDb = (title) => {
-    api.addPoemData({ title, poem }).then(() => {
-      changePopupVisibility(false);
+  const onTitleChange = (title) => setTitle(title);
+  const onPoemChange = (poem) => setPoem(poem);
+  const addCategory = (category) => setCategory(category);
+
+  const addPoem = () => {
+    api.addPoemData({ title, poem, category }).then(() => {
       setPoem('');
+      setTitle('');
+      setCategory('');
       changePostStatus(true);
       setTimeout(() => changePostStatus(false), 2000);
     });
   };
 
-  const addPoem = (poem) => {
-    setPoem(poem);
-    changePopupVisibility(true);
-  };
-
-  const popup = isPopupVisible ? <AddTitlePopup onClick={addPoemToDb} /> : '';
   const acknowledgementPopup = isPosted ? <AcknowledgementPopup /> : '';
 
   return (
-    <div>
+    <div className='editor'>
       <Input
-        value={poem}
-        onClick={addPoem}
-        placeHolder='write it out...'
-        class='editor'
-        action='Compose'
+        class='title-section'
+        value={title}
+        onChange={onTitleChange}
+        placeHolder='give a title...'
       />
-      {popup}
+      <Input
+        class='poem-section'
+        value={poem}
+        onChange={onPoemChange}
+        placeHolder='write it out...'
+      />
+      <Category selectedCategory={category} onClick={addCategory} />
+      <Publish
+        isActive={title && poem && category}
+        action='Publish'
+        onClick={addPoem}
+      />
       {acknowledgementPopup}
     </div>
   );

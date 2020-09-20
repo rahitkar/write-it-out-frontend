@@ -2,12 +2,17 @@ import React from 'react';
 
 export default (props) => {
   const handleClick = () => {
-    props.onClick();
+    if (props.isActive) {
+      props.onClick();
+    }
   };
 
+  const indicator = props.isActive ? 'active' : 'inactive';
   return (
     <div className={props.action}>
-      <button onClick={handleClick}>{props.action}</button>
+      <button className={indicator} onClick={handleClick}>
+        {props.action}
+      </button>
     </div>
   );
 };
