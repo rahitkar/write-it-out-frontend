@@ -17,7 +17,7 @@ export default (props) => {
         onChange={(input) => updateInput(input)}
         placeHolder={props.placeHolder}
       />
-      <Publish onClick={addInput} action={props.action} />
+      <Publish isActive={input} onClick={addInput} action={props.action} />
     </div>
   );
 };
