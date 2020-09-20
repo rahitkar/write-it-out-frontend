@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Links from '../../Links';
 import Gallery from '../../Gallery';
-import { BrowserRouter } from 'react-router-dom';
+import PoemPosts from '../home/PoemPosts';
 
-const Home = (props) => <h1>Home</h1>;
-const Editor = (props) => <h1>Editor</h1>;
+import api from '../../api';
 
-const names = [
-  'All',
+const categories = [
   'Inspiration',
   'Letter',
   'Life',
@@ -20,15 +19,35 @@ const names = [
 ];
 
 export default (props) => {
+  const [components, setComponents] = useState([]);
+
+  useEffect(() => {
+    api.fetchPoemsData().then((poemsData) => {
+      const filteredPoemsData = categories.map((category) => {
+        return poemsData.filter((poemData) => category === poemData.category);
+      });
+      setComponents(
+        [poemsData, ...filteredPoemsData].map((filteredPoemsData) => (
+          <PoemPosts poemsData={filteredPoemsData} />
+        ))
+      );
+    });
+  }, []);
+
   return (
     <BrowserRouter>
       <Links
-        names={names}
+        names={['All', ...categories]}
+        categoryOf='Explore/'
         activeClass='indicate-1'
         class='option-1'
         rapperClass='top-bar-1'
       />
-      <Gallery names={names} components={[<Home />, <Editor />]} />
+      <Gallery
+        names={['All', ...categories]}
+        categoryOf='Explore/'
+        components={components}
+      />
     </BrowserRouter>
   );
 };
