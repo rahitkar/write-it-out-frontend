@@ -46,6 +46,19 @@ body {
   overflow: hidden;
 }
 
+.All-gallery,
+.Inspiration-gallery,
+.Letter-gallery,
+.Life-gallery,
+.Love-gallery,
+.One-liner-gallery,
+.Philosophy-gallery,
+.Poetry-gallery,
+.Politics-gallery,
+.Short-story-gallery {
+  padding-top: 4%;
+}
+
 .option {
   margin-right: 2.6%;
   margin-top: 0.4%;

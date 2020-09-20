@@ -6,13 +6,14 @@ api.fetchPoemsData = () => {
     .then((details) => JSON.parse(details));
 };
 
-api.addPoemData = ({ title, poem }) => {
+api.addPoemData = ({ title, poem, category }) => {
   return fetch('/api/addPoemData', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       title,
       poem,
+      category,
     }),
   });
 };

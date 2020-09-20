@@ -1,33 +1,23 @@
-import React, { useState } from 'react';
-import Publish from '../write/Publish';
+import React from 'react';
 
 const Input = (props) => {
-  const [input, updateInput] = useState(props.value);
-
-  const addInput = () => {
-    props.onClick(input);
-    updateInput('');
-  };
-
   const handleChange = (event) => {
-    updateInput(event.target.value);
+    props.onChange(event.target.value);
   };
 
   return (
-    <div className={props.class}>
-      <textarea
-        value={input}
-        onChange={handleChange}
-        placeholder={props.placeHolder}
-      />
-      <Publish onClick={addInput} action={props.action} />
-    </div>
+    <textarea
+      className={props.class}
+      value={props.value}
+      onChange={handleChange}
+      placeholder={props.placeHolder}
+    />
   );
 };
 
 Input.defaultProps = {
   value: '',
-  className: '',
+  class: '',
 };
 
 export default Input;

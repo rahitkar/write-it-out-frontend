@@ -1,11 +1,15 @@
 import React from 'react';
 
-import Input from './Input';
+import InputBox from './InputBox';
 
 export default (props) => {
   return (
     <div className=''>
-      <Input action='comment' class='comment-section' placeHolder='write your comment...' />
+      <InputBox
+        action='comment'
+        class='comment-section'
+        placeHolder='write your comment...'
+      />
     </div>
   );
 };

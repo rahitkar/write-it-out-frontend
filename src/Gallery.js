@@ -4,12 +4,17 @@ import './container.css';
 
 const Gallery = (props) => {
   return (
-    <Routes names={props.names} components={props.components} />
+    <Routes
+      names={props.names}
+      categoryOf={props.categoryOf}
+      components={props.components}
+    />
   );
 };
 
 Gallery.defaultProps = {
   class: '',
+  categoryOf: '',
 };
 
 export default Gallery;
