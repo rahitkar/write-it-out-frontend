@@ -8,7 +8,7 @@ import api from '../../api';
 
 import './editor.css';
 
-export default () => {
+export default (props) => {
   const [poem, setPoem] = useState('');
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -19,7 +19,8 @@ export default () => {
   const addCategory = (category) => setCategory(category);
 
   const addPoem = () => {
-    api.addPoemData({ title, poem, category }).then(() => {
+    const userId = props.loggedInUserId;
+    api.addPoemData({ title, poem, category, userId }).then(() => {
       setPoem('');
       setTitle('');
       setCategory('');

@@ -6,15 +6,23 @@ import Reaction from './Reaction';
 import CommentSection from './CommentSection';
 
 import './home.css';
+import { UserContext } from '../../UserContext';
 
 export default (props) => {
-  const { user, title, poem, likes, comments } = props.poemData;
+  const { userId, title, poem, likes, comments } = props.poemData;
+
   return (
     <div className='poem-post'>
-      <PostDetails user={user} />
+      <PostDetails userId={userId} />
       <Poem title={title} poem={poem} />
-      <Reaction likes={likes} comments={comments} />
-      <CommentSection url={user.url} />
+      <UserContext.Consumer>
+        {(userId) => (
+          <div>
+            <Reaction loggedInUser={userId} likes={likes} comments={comments} />
+            <CommentSection loggedInUser={userId} />
+          </div>
+        )}
+      </UserContext.Consumer>
     </div>
   );
 };

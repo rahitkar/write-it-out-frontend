@@ -1,7 +1,11 @@
 const api = {};
 
 api.getUser = () => {
-  return fetch('/api/getUser').then((res) => res.json());
+  return fetch('/api/getUserId').then((res) => res.json());
+};
+
+api.getUserDetails = (userId) => {
+  return fetch(`/api/user/getUserDetails/${userId}`).then((res) => res.json());
 };
 
 api.fetchPoemsData = () => {
@@ -10,15 +14,12 @@ api.fetchPoemsData = () => {
     .then((details) => JSON.parse(details));
 };
 
-api.addPoemData = ({ title, poem, category }) => {
+api.addPoemData = (details) => {
+  console.log(details);
   return fetch('/api/user/addPoemData', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      title,
-      poem,
-      category,
-    }),
+    body: JSON.stringify(details),
   });
 };
 
