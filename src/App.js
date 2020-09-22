@@ -1,52 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Links from './Links';
-import Gallery from './Gallery';
 
-import Home from './components/home/Home';
-import Explore from './components/explore/Explore';
-import WriteSection from './components/write/WriteSection';
-
-import HomeIcon from './home.svg';
-import ExploreIcon from './explore.svg';
-import WriteIcon from './write.svg';
+import LandingPage from './LandingPage';
 import Login from './Login';
 
 import api from './api';
-
-const home = '';
-const paths = [home, 'Explore', 'Write'];
-const categories = ['Home', 'Explore', 'Write'];
-const components = [<Home />, <Explore />, <WriteSection />];
+import { UserContext } from './UserContext';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [loggedInUserId, setUserId] = useState(null);
   useEffect(() => {
-    api.getUser().then(({ user }) => setUser(user));
-    return;
+    api.getUser().then(({ loggedInUserId }) => setUserId(loggedInUserId));
   }, []);
 
-  if (user) {
+  if (loggedInUserId) {
     return (
-      <BrowserRouter>
-        <div className='logo'>WriteItOut</div>
-        <Links
-          paths={paths}
-          categories={categories}
-          srcs={[HomeIcon, ExploreIcon, WriteIcon]}
-          activeClass='indicate'
-          className='option'
-          rapperClass='top-bar'
-        />
-        <Gallery
-          paths={paths}
-          categories={categories}
-          components={components}
-        />
-      </BrowserRouter>
+      <UserContext.Provider value={loggedInUserId}>
+        <LandingPage />;
+      </UserContext.Provider>
     );
   }
-
   return <Login />;
 }
 
