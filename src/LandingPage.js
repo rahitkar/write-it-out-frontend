@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { UserContext } from './UserContext';
 import { BrowserRouter } from 'react-router-dom';
 import Links from './Links';
 import Gallery from './Gallery';
@@ -17,13 +16,13 @@ const home = '';
 const paths = [home, 'Explore', 'Write'];
 const categories = ['Home', 'Explore', 'Write'];
 
-const writeSection = (
-  <UserContext.Consumer>
-    {(loggedInUserId) => <WriteSection loggedInUserId={loggedInUserId} />}
-  </UserContext.Consumer>
-);
+// const writeSection = (
+//   <UserContext.Consumer>
+//     {(loggedInUserId) => <WriteSection loggedInUserId={loggedInUserId} />}
+//   </UserContext.Consumer>
+// );
 
-const components = [<Home />, <Explore />, writeSection];
+const components = [<Home />, <Explore />, <WriteSection />];
 
 export default () => (
   <BrowserRouter>
