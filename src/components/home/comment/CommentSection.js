@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InputBox from './InputBox';
+import InputBox from '../InputBox';
 
 export default (props) => {
   return (

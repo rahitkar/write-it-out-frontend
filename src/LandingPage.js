@@ -7,10 +7,10 @@ import Home from './components/home/Home';
 import Explore from './components/explore/Explore';
 import WriteSection from './components/write/WriteSection';
 import UserProfile from './components/userProfile/UserProfile';
-import HomeIcon from './home.svg';
-import ExploreIcon from './explore.svg';
-import WriteIcon from './write.svg';
-import UserIcon from './user.svg';
+import HomeIcon from './Icons/home.svg';
+import ExploreIcon from './Icons/explore.svg';
+import WriteIcon from './Icons/write.svg';
+import UserIcon from './Icons/user.svg';
 
 const home = '';
 const paths = [home, 'Explore', 'Write', 'Profile'];

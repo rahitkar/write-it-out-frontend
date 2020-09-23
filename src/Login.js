@@ -1,6 +1,6 @@
 import React from 'react';
 import './container.css';
-import Pen from './pen.png';
+import Pen from './Icons/pen.png';
 
 export default () => {
   return (
@@ -10,7 +10,10 @@ export default () => {
         <img src={Pen} alt='pen' />
       </div>
       <button>
-        <a className='github-login' href='https://github.com/login/oauth/authorize?client_id=de3c6a3996f107813577'>
+        <a
+          className='github-login'
+          href='https://github.com/login/oauth/authorize?client_id=de3c6a3996f107813577'
+        >
           Github Login
         </a>
       </button>

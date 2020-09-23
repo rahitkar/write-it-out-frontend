@@ -2,8 +2,8 @@ import React from 'react';
 
 import UserDetails from './UserDetails';
 import Poem from './Poem';
-import LikeSection from './LikeSection';
-import CommentSection from './CommentSection';
+import LikeSection from './like/LikeSection';
+import CommentSection from './comment/CommentSection';
 import './home.css';
 import './reaction.css';
 

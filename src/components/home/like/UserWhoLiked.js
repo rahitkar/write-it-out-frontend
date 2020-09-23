@@ -1,5 +1,5 @@
 import React from 'react';
-import UserDetails from './UserDetails';
+import UserDetails from '../UserDetails';
 
 export default (props) => {
   const userWhoLiked = props.likes.map((userId, indx) => (

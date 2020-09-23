@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import LikeIcon from './LikeIcon';
 import Likes from './Likes';
 
-import './reaction.css'
+import '../reaction.css'
 
 export default (props) => {
   const { postId, likes, loggedInUser } = props;

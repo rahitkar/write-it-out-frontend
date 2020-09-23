@@ -14,11 +14,11 @@
 }
 
 .liked {
-  content: url(./heartLiked.svg);
+  content: url(../../Icons/heartLiked.svg);
 }
 
 .not-liked {
-  content: url(./heartNotLiked.svg);
+  content: url(../../Icons/heartNotLiked.svg);
 }
 
 .likeDetails {
