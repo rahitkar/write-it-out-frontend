@@ -6,11 +6,17 @@ import api from '../../api';
 import './profile.css';
 
 export default (props) => {
-  const { name, url } = props.details;
+  const [details, setDetails] = useState({ name: '', url: '' });
   const [poemsData, updatePoemsData] = useState([]);
+
   useEffect(() => {
+    api.getUserDetails(props.userId).then((detail) => {
+      setDetails(JSON.parse(detail));
+    });
     api.getUserPoems(props.userId).then(updatePoemsData);
   }, [props.userId]);
+
+  const { name, url } = details;
   return (
     <div>
       <div className='profile'>
