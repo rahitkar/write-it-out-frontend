@@ -19,12 +19,19 @@ api.fetchPoemsData = () => {
 };
 
 api.addPoemData = (details) => {
-  console.log(details);
   return fetch('/api/user/addPoemData', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(details),
   });
+};
+
+api.updateLike = (postId) => {
+  return fetch(`/api/user/updateLike/${postId}`);
+};
+
+api.getLikes = (postId) => {
+  return fetch(`/api/user/getLikes/${postId}`).then((res) => res.json());
 };
 
 export default api;

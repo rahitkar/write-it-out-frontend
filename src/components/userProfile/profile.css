@@ -2,16 +2,19 @@
   position: fixed;
   margin-left: 1%;
   margin-top: 0.8%;
+  width: 10%;
 }
 
 .profile > img {
   border-radius: 50%;
-  width: 32%;
+  width: 86px;
 }
 
 .profile > div {
+  text-align: center;
   font-size: larger;
   font-weight: 600;
   color: white;
-  text-shadow: 0 0 2px black;
+  text-shadow: 0 0 1.2px black;
+  width: 86px;
 }

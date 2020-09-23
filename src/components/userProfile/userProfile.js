@@ -10,8 +10,8 @@ export default (props) => {
   const [poemsData, updatePoemsData] = useState([]);
 
   useEffect(() => {
-    api.getUserDetails(props.userId).then((detail) => {
-      setDetails(JSON.parse(detail));
+    api.getUserDetails(props.userId).then((details) => {
+      setDetails(JSON.parse(details));
     });
     api.getUserPoems(props.userId).then(updatePoemsData);
   }, [props.userId]);
