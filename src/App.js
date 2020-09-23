@@ -11,7 +11,7 @@ function App() {
   }, []);
 
   if (loggedInUserId) {
-    return <LandingPage />;
+    return <LandingPage userId={loggedInUserId} />;
   }
   return <Login />;
 }

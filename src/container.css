@@ -53,7 +53,8 @@ body {
   justify-content: flex-end;
 }
 
-.Home-gallery {
+.Home-gallery,
+.Profile-gallery {
   height: fit-content;
   padding: 0.6%;
   padding-top: 6%;
@@ -101,6 +102,7 @@ body {
 }
 
 .option > img {
+  border-radius: 18%;
   height: 54%;
 }
 

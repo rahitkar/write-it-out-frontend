@@ -1,0 +1,17 @@
+.profile {
+  position: fixed;
+  margin-left: 1%;
+  margin-top: 0.8%;
+}
+
+.profile > img {
+  border-radius: 50%;
+  width: 32%;
+}
+
+.profile > div {
+  font-size: larger;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 2px black;
+}

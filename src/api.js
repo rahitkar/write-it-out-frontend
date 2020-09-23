@@ -4,6 +4,10 @@ api.getUser = () => {
   return fetch('/api/getUserId').then((res) => res.json());
 };
 
+api.getUserPoems = (userId) => {
+  return fetch(`/api/user/getUserPoems/${userId}`).then((res) => res.json());
+};
+
 api.getUserDetails = (userId) => {
   return fetch(`/api/user/getUserDetails/${userId}`).then((res) => res.json());
 };
