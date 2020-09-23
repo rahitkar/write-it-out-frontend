@@ -39,12 +39,6 @@
   padding: 2%;
 }
 
-.reaction {
-  padding: 1.2%;
-  display: flex;
-  justify-content: flex-start;
-}
-
 .comment-section {
   padding: 2%;
   border-top: 1px solid lightgray;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PostDetails from './UserDetails';
+import UserDetails from './UserDetails';
 import Poem from './Poem';
 import LikeSection from './LikeSection';
 import CommentSection from './CommentSection';
@@ -12,9 +12,13 @@ export default (props) => {
 
   return (
     <div className='poem-post'>
-      <PostDetails userId={userId} className='post-details' />
+      <UserDetails userId={userId} className='post-details' />
       <Poem title={title} poem={poem} />
-      <LikeSection postId={id} userId={userId} likes={likes} />
+      <LikeSection
+        postId={id}
+        loggedInUser={props.loggedInUser}
+        likes={likes}
+      />
       <CommentSection postId={id} comments={comments} />
     </div>
   );

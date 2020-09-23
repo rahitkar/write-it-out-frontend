@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import LikeIcon from './LikeIcon';
 import Likes from './Likes';
 
+import './reaction.css'
+
 export default (props) => {
-  const { postId, likes, userId } = props;
-  const [isLiked, toggleLikeStatus] = useState(likes.includes(userId));
+  const { postId, likes, loggedInUser } = props;
+
+  const [isLiked, toggleLikeStatus] = useState(likes.includes(loggedInUser));
   const [usersWhoLiked, updateLikes] = useState(likes);
 
   const likePoem = (usersWhoLiked) => {

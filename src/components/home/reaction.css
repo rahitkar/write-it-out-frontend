@@ -1,12 +1,16 @@
 .reaction {
-  width: 4%;
+  width: 12%;
+  padding: 1%;
   margin-right: 1%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .like-icon {
   width: 86%;
   margin-right: 18%;
   cursor: pointer;
+  max-height: 20px;
 }
 
 .liked {
@@ -15,4 +19,31 @@
 
 .not-liked {
   content: url(./heartNotLiked.svg);
+}
+
+.likeDetails {
+  max-height: 10vw;
+}
+
+.likes {
+  margin-bottom: 10%;
+  cursor: pointer;
+}
+
+.likes :hover {
+  border-bottom: 1px solid lightgray;
+}
+
+.user-who-liked {
+  display: flex;
+  margin-bottom: 10%;
+}
+
+.user-who-liked > img {
+  border-radius: 34%;
+  width: 50%;
+}
+
+.user-who-liked > div {
+  padding: 10%;
 }

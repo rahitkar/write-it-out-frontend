@@ -9,5 +9,5 @@ export default (props) => {
     api.fetchPoemsData().then(updatePoemData);
   }, []);
 
-  return <PoemPosts poemsData={poemsData} />;
+  return <PoemPosts loggedInUser={props.loggedInUser} poemsData={poemsData} />;
 };
