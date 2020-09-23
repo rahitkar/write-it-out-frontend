@@ -15,6 +15,7 @@ api.fetchPoemsData = () => {
 };
 
 api.addPoemData = (details) => {
+  console.log(details);
   return fetch('/api/user/addPoemData', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

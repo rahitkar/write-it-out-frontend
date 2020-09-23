@@ -3,7 +3,6 @@ import Input from '../home/Input';
 import Category from './Category';
 import Publish from './Publish';
 import AcknowledgementPopup from './AcknowledgementPopup';
-import { UserContext } from '../../UserContext';
 
 import api from '../../api';
 
@@ -14,14 +13,13 @@ export default (props) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [isPosted, changePostStatus] = useState(false);
-  const userId = useContext(UserContext);
 
   const onTitleChange = (title) => setTitle(title);
   const onPoemChange = (poem) => setPoem(poem);
   const addCategory = (category) => setCategory(category);
 
   const addPoem = () => {
-    api.addPoemData({ title, poem, category, userId }).then(() => {
+    api.addPoemData({ title, poem, category }).then(() => {
       setPoem('');
       setTitle('');
       setCategory('');

@@ -16,12 +16,6 @@ const home = '';
 const paths = [home, 'Explore', 'Write'];
 const categories = ['Home', 'Explore', 'Write'];
 
-// const writeSection = (
-//   <UserContext.Consumer>
-//     {(loggedInUserId) => <WriteSection loggedInUserId={loggedInUserId} />}
-//   </UserContext.Consumer>
-// );
-
 const components = [<Home />, <Explore />, <WriteSection />];
 
 export default () => (

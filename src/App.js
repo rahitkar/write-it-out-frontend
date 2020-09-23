@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import LandingPage from './LandingPage';
 import Login from './Login';
-
 import api from './api';
-import { UserContext } from './UserContext';
 
 function App() {
   const [loggedInUserId, setUserId] = useState(null);
@@ -13,11 +11,7 @@ function App() {
   }, []);
 
   if (loggedInUserId) {
-    return (
-      <UserContext.Provider value={loggedInUserId}>
-        <LandingPage />;
-      </UserContext.Provider>
-    );
+    return <LandingPage />;
   }
   return <Login />;
 }
