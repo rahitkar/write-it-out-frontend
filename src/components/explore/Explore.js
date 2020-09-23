@@ -23,13 +23,16 @@ const filterPoems = (poemsData) =>
     return poemsData.filter((poemData) => category === poemData.category);
   });
 
-const getPoemsComponent = (poemsData) =>
-  poemsData.map((filteredPoemsData) => (
-    <PoemPosts poemsData={filteredPoemsData} />
-  ));
-
-export default () => {
+export default (props) => {
   const [components, setComponents] = useState([]);
+
+  const getPoemsComponent = (poemsData) =>
+    poemsData.map((filteredPoemsData) => (
+      <PoemPosts
+        loggedInUser={props.loggedInUser}
+        poemsData={filteredPoemsData}
+      />
+    ));
 
   useEffect(() => {
     api.fetchPoemsData().then((poemsData) => {

@@ -19,7 +19,7 @@ const categories = ['Home', 'Explore', 'Write', 'Profile'];
 export default (props) => {
   const components = [
     <Home loggedInUser={props.userId} />,
-    <Explore />,
+    <Explore loggedInUser={props.userId} />,
     <WriteSection />,
     <UserProfile userId={props.userId} />,
   ];
