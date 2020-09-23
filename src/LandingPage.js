@@ -6,7 +6,7 @@ import Gallery from './Gallery';
 import Home from './components/home/Home';
 import Explore from './components/explore/Explore';
 import WriteSection from './components/write/WriteSection';
-import UserProfile from './components/userProfile/userProfile';
+import UserProfile from './components/userProfile/UserProfile';
 import HomeIcon from './home.svg';
 import ExploreIcon from './explore.svg';
 import WriteIcon from './write.svg';

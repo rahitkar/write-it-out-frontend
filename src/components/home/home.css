@@ -23,14 +23,11 @@
   border-radius: 50%;
   height: 8%;
   width: 8%;
+  margin-right: 2%;
 }
 
 .post-details > div {
-  width: 100%;
-  margin: 4% 0% 0% 2.8%;
-}
-
-.name {
+  padding: 2% 0% 2% 0%;
   font-size: x-large;
   color: rgb(43, 42, 42);
 }

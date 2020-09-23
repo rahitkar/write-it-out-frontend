@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
 import PoemPosts from '../home/PoemPosts';
+import UserDetails from '../home/UserDetails';
 import api from '../../api';
 
 import './profile.css';
 
 export default (props) => {
-  const [details, setDetails] = useState({ name: '', url: '' });
   const [poemsData, updatePoemsData] = useState([]);
 
   useEffect(() => {
-    api.getUserDetails(props.userId).then((details) => {
-      setDetails(JSON.parse(details));
-    });
     api.getUserPoems(props.userId).then(updatePoemsData);
   }, [props.userId]);
 
-  const { name, url } = details;
   return (
     <div>
-      <div className='profile'>
-        <img src={url} alt='dp' />
-        <div>{name}</div>
-      </div>
+      <UserDetails className='profile' userId={props.userId} />
       <PoemPosts poemsData={poemsData} />
     </div>
   );

@@ -12,11 +12,9 @@ export default (props) => {
   }, [props.userId]);
 
   return (
-    <div className='post-details'>
+    <div className={props.className}>
       <img alt={details.name} src={details.url} />
-      <div>
-        <span className='name'>{details.name}</span>
-      </div>
+      <div>{details.name}</div>
     </div>
   );
 };
