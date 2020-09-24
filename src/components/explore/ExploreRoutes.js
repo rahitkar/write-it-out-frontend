@@ -12,7 +12,7 @@ const filterPoems = (poemsData) =>
     return poemsData.filter((poemData) => category === poemData.category);
   });
 
-export default (props) => {
+export default () => {
   const [components, setComponents] = useState([]);
 
   const getPoemsComponent = (poemsData) =>

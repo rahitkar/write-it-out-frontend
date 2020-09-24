@@ -11,7 +11,7 @@ export default () => {
       </div>
       <a
         className='github-login'
-        href='https://github.com/login/oauth/authorize?client_id=de3c6a3996f107813577'
+        href='https://github.com/login/oauth/authorize?client_id=505d4cb868b08a96110e'
       >
         Github Login
       </a>

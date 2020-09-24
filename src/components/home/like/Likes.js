@@ -15,12 +15,12 @@ export default (props) => {
   }
 
   return (
-    <div>
+    <div className='like-rapper'>
       <div className='likes' onClick={handleOnClick}>
         <span>{props.likes.length}</span>
-        <span>likes</span>
+        <span>like</span>
       </div>
-      <div className='likeDetails'>{popup}</div>
+      <div className='like-details'>{popup}</div>
     </div>
   );
 };

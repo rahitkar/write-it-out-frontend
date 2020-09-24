@@ -14,20 +14,15 @@ import UserIcon from './Icons/user.svg';
 
 import UserContext from './UserContext';
 
-export default (props) => {
+export default () => {
   const loggedInUser = useContext(UserContext);
-
-  const home = '';
-  const linkPaths = [home, 'Explore', 'Write', `Profile/${loggedInUser}`];
-
-  const categories = ['Home', 'Explore', 'Write', 'Profile'];
 
   return (
     <BrowserRouter>
       <div className='logo'>WriteItOut</div>
       <Links
-        paths={linkPaths}
-        categories={categories}
+        paths={['', 'Explore', 'Write', `Profile/${loggedInUser}`]}
+        categories={['Home', 'Explore', 'Write', 'Profile']}
         srcs={[HomeIcon, ExploreIcon, WriteIcon, UserIcon]}
         activeClass='indicate'
         className='option'
@@ -35,9 +30,7 @@ export default (props) => {
       />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/Explore'>
-          {Explore}
-        </Route>
+        <Route path='/Explore'>{Explore}</Route>
         <Route exact path='/Write' component={WriteSection} />
         <Route exact path='/Profile/:id' component={Profile} />
       </Switch>

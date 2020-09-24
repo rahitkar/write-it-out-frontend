@@ -32,4 +32,17 @@ api.getLikes = (postId) => {
   return fetch(`/api/user/getLikes/${postId}`).then((res) => res.json());
 };
 
+api.addComment = (comment, postId) => {
+  console.log(comment);
+  return fetch(`/api/user/addComment/${postId}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ comment }),
+  });
+};
+
+api.getComments = (postId) => {
+  return fetch(`/api/user/getComments/${postId}`).then((res) => res.json());
+};
+
 export default api;

@@ -1,14 +1,17 @@
 .reaction {
-  width: 12%;
-  padding: 1%;
+  padding: 1% 0% 0% 0.4%;
   margin-right: 1%;
   display: flex;
   justify-content: flex-start;
 }
 
+.comment-reaction {
+  display: flex;
+}
+
 .like-icon {
-  width: 86%;
-  margin-right: 18%;
+  width: 6%;
+  margin-right: 1%;
   cursor: pointer;
   max-height: 20px;
 }
@@ -21,31 +24,63 @@
   content: url(../../Icons/heartNotLiked.svg);
 }
 
-.likeDetails {
-  max-height: 10vw;
+.like-details,
+.comment-details {
+  max-height: 6vw;
+  overflow: scroll;
+  padding: 1%;
 }
 
-.likes {
-  margin-bottom: 10%;
+.like-rapper,
+.comment-rapper {
+  width: 100%;
+}
+
+.likes,
+.comments {
+  margin-left: 2%;
   cursor: pointer;
 }
 
+.comments :hover,
 .likes :hover {
   border-bottom: 1px solid lightgray;
 }
 
-.user-who-liked {
+.comments > span,
+.likes > span {
+  margin-right: 1%;
+  color: gray;
+}
+
+/* .user-who-liked {
   display: flex;
-  margin-bottom: 10%;
+  width: 30%;
+  height: 12%;
+} */
+
+.user-who-liked,
+.user-who-commented {
+  display: flex;
+  width: 14%;
+  height: 12%;
 }
 
-.user-who-liked > img {
+.user-who-liked > img,
+.user-who-commented > img {
   border-radius: 34%;
-  width: 50%;
+  width: 34%;
+  height: 57%;
+  margin-left: 2%;
 }
 
+.user-who-commented > a,
 .user-who-liked > a {
+  color: gray;
   padding: 10%;
   text-decoration: none;
-  color: black;
+}
+
+.comment-reaction > p {
+  margin: 1.2% 0% 0% 6%;
 }

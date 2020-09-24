@@ -21,17 +21,12 @@ body {
 }
 
 .github-login {
-  background-color: white;
-  border: 1px solid lightgray;
+  background-color: lightgray;
   color: black;
   padding: 14px 25px;
   font-size: large;
   text-decoration: none;
   margin-left: 22%;
-}
-
-.github-login :hover {
-  background-color: lightgray;
 }
 
 .logo {
