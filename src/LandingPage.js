@@ -1,36 +1,44 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Links from './Links';
-import Gallery from './Gallery';
 import Home from './components/home/Home';
 import Explore from './components/explore/Explore';
 import WriteSection from './components/write/WriteSection';
-import UserProfile from './components/userProfile/UserProfile';
+import Profile from './components/userProfile/UserProfile';
+
 import HomeIcon from './Icons/home.svg';
 import ExploreIcon from './Icons/explore.svg';
 import WriteIcon from './Icons/write.svg';
 import UserIcon from './Icons/user.svg';
 
-const home = '';
-const paths = [home, 'Explore', 'Write', 'Profile'];
-const categories = ['Home', 'Explore', 'Write', 'Profile'];
+import UserContext from './UserContext';
 
 export default (props) => {
-  const components = [<Home />, <Explore />, <WriteSection />, <UserProfile />];
+  const loggedInUser = useContext(UserContext);
+
+  const home = '';
+  const linkPaths = [home, 'Explore', 'Write', `Profile/${loggedInUser}`];
+
+  const categories = ['Home', 'Explore', 'Write', 'Profile'];
 
   return (
     <BrowserRouter>
       <div className='logo'>WriteItOut</div>
       <Links
-        paths={paths}
+        paths={linkPaths}
         categories={categories}
         srcs={[HomeIcon, ExploreIcon, WriteIcon, UserIcon]}
         activeClass='indicate'
         className='option'
         rapperClass='top-bar'
       />
-      <Gallery paths={paths} categories={categories} components={components} />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/Explore' component={Explore} />
+        <Route exact path='/Write' component={WriteSection} />
+        <Route exact path='/Profile/:id' component={Profile} />
+      </Switch>
     </BrowserRouter>
   );
 };

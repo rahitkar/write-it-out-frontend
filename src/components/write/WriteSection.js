@@ -31,26 +31,28 @@ export default (props) => {
   const acknowledgementPopup = isPosted ? <AcknowledgementPopup /> : '';
 
   return (
-    <div className='editor'>
-      <Input
-        class='title-section'
-        value={title}
-        onChange={onTitleChange}
-        placeHolder='give a title...'
-      />
-      <Input
-        class='poem-section'
-        value={poem}
-        onChange={onPoemChange}
-        placeHolder='write it out...'
-      />
-      <Category selectedCategory={category} onClick={addCategory} />
-      <Publish
-        isActive={title && poem && category}
-        action='Publish'
-        onClick={addPoem}
-      />
-      {acknowledgementPopup}
+    <div className='Write-gallery'>
+      <div className='editor'>
+        <Input
+          class='title-section'
+          value={title}
+          onChange={onTitleChange}
+          placeHolder='give a title...'
+        />
+        <Input
+          class='poem-section'
+          value={poem}
+          onChange={onPoemChange}
+          placeHolder='write it out...'
+        />
+        <Category selectedCategory={category} onClick={addCategory} />
+        <Publish
+          isActive={title && poem && category}
+          action='Publish'
+          onClick={addPoem}
+        />
+        {acknowledgementPopup}
+      </div>
     </div>
   );
 };

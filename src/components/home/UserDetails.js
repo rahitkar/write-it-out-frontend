@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import api from '../../api';
 
 export default (props) => {
+  const [isClicked, setClickedStatus] = useState(false);
   const [details, setDetails] = useState({ name: '', url: '' });
 
   useEffect(() => {
@@ -11,10 +13,18 @@ export default (props) => {
     });
   }, [props.userId]);
 
+  let url = '';
+  if (isClicked) {
+    url = <Redirect to={`/Profile/${props.userId}`}></Redirect>;
+  }
+
   return (
     <div className={props.className}>
       <img alt={details.name} src={details.url} />
-      <div>{details.name}</div>
+      <div onClick={() => setClickedStatus(true)}>
+        {details.name}
+        {url}
+      </div>
     </div>
   );
 };

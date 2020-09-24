@@ -9,5 +9,9 @@ export default (props) => {
     api.fetchPoemsData().then(updatePoemData);
   }, []);
 
-  return <PoemPosts poemsData={poemsData} />;
+  return (
+    <div className='Home-gallery'>
+      <PoemPosts poemsData={poemsData} />
+    </div>
+  );
 };
