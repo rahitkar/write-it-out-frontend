@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import LandingPage from './LandingPage';
 import Login from './Login';
+
+import UserContext from './UserContext';
+
 import api from './api';
 
 function App() {
@@ -11,7 +14,11 @@ function App() {
   }, []);
 
   if (loggedInUserId) {
-    return <LandingPage userId={loggedInUserId} />;
+    return (
+      <UserContext.Provider value={loggedInUserId}>
+        <LandingPage />;
+      </UserContext.Provider>
+    );
   }
   return <Login />;
 }

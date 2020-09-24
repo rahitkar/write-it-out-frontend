@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import UserContext from '../../../UserContext';
 
 import LikeIcon from './LikeIcon';
 import Likes from './Likes';
 
-import '../reaction.css'
+import '../reaction.css';
 
 export default (props) => {
-  const { postId, likes, loggedInUser } = props;
+  const loggedInUser = useContext(UserContext);
+  const { postId, likes } = props;
 
   const [isLiked, toggleLikeStatus] = useState(likes.includes(loggedInUser));
   const [usersWhoLiked, updateLikes] = useState(likes);

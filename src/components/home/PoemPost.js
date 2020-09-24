@@ -16,7 +16,6 @@ export default (props) => {
       <Poem title={title} poem={poem} />
       <LikeSection
         postId={id}
-        loggedInUser={props.loggedInUser}
         likes={likes}
       />
       <CommentSection postId={id} comments={comments} />

@@ -17,12 +17,7 @@ const paths = [home, 'Explore', 'Write', 'Profile'];
 const categories = ['Home', 'Explore', 'Write', 'Profile'];
 
 export default (props) => {
-  const components = [
-    <Home loggedInUser={props.userId} />,
-    <Explore loggedInUser={props.userId} />,
-    <WriteSection />,
-    <UserProfile userId={props.userId} />,
-  ];
+  const components = [<Home />, <Explore />, <WriteSection />, <UserProfile />];
 
   return (
     <BrowserRouter>

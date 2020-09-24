@@ -28,10 +28,7 @@ export default (props) => {
 
   const getPoemsComponent = (poemsData) =>
     poemsData.map((filteredPoemsData) => (
-      <PoemPosts
-        loggedInUser={props.loggedInUser}
-        poemsData={filteredPoemsData}
-      />
+      <PoemPosts poemsData={filteredPoemsData} />
     ));
 
   useEffect(() => {

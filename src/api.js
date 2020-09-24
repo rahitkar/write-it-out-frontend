@@ -13,9 +13,7 @@ api.getUserDetails = (userId) => {
 };
 
 api.fetchPoemsData = () => {
-  return fetch('/api/user/fetchPoemsData')
-    .then((res) => res.json())
-    .then((details) => JSON.parse(details));
+  return fetch('/api/user/fetchPoemsData').then((res) => res.json());
 };
 
 api.addPoemData = (details) => {
