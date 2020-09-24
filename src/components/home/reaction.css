@@ -44,6 +44,8 @@
   width: 50%;
 }
 
-.user-who-liked > div {
+.user-who-liked > a {
   padding: 10%;
+  text-decoration: none;
+  color: black;
 }

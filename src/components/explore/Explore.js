@@ -1,17 +1,9 @@
 import React from 'react';
 import Links from '../../Links';
 
-const categories = [
-  'Inspiration',
-  'Letter',
-  'Life',
-  'Love',
-  'One-liner',
-  'Philosophy',
-  'Poetry',
-  'Politics',
-  'Short-story',
-];
+import ExploreRoutes from './ExploreRoutes';
+
+import categories from './categories';
 
 export default (props) => {
   return (
@@ -24,6 +16,7 @@ export default (props) => {
         className='option-1'
         rapperClass='top-bar-1'
       />
+      <ExploreRoutes />
     </div>
   );
 };

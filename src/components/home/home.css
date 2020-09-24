@@ -26,10 +26,15 @@
   margin-right: 2%;
 }
 
-.post-details > div {
-  padding: 2% 0% 2% 0%;
+.post-details > a {
+  padding-top: 2%;
   font-size: x-large;
   color: rgb(43, 42, 42);
+  text-decoration: none;
+}
+
+.post-details :hover {
+  border-bottom: 1px solid lightgray;
 }
 
 .poem {

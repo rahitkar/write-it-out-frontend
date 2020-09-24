@@ -35,7 +35,9 @@ export default (props) => {
       />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/Explore' component={Explore} />
+        <Route path='/Explore'>
+          {Explore}
+        </Route>
         <Route exact path='/Write' component={WriteSection} />
         <Route exact path='/Profile/:id' component={Profile} />
       </Switch>
