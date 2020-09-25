@@ -7,6 +7,8 @@ import Explore from './components/explore/Explore';
 import WriteSection from './components/write/WriteSection';
 import Profile from './components/userProfile/UserProfile';
 
+import Logout from './Logout';
+
 import HomeIcon from './Icons/home.svg';
 import ExploreIcon from './Icons/explore.svg';
 import WriteIcon from './Icons/write.svg';
@@ -14,12 +16,13 @@ import UserIcon from './Icons/user.svg';
 
 import UserContext from './UserContext';
 
-export default () => {
+export default (props) => {
   const loggedInUser = useContext(UserContext);
 
   return (
     <BrowserRouter>
       <div className='logo'>WriteItOut</div>
+      <Logout clearUser={props.clearUser} />
       <Links
         paths={['', 'Explore', 'Write', `Profile/${loggedInUser}`]}
         categories={['Home', 'Explore', 'Write', 'Profile']}

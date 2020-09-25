@@ -24,7 +24,7 @@ export default (props) => {
       setTitle('');
       setCategory('');
       changePostStatus(true);
-      setTimeout(() => changePostStatus(false), 2000);
+      setTimeout(() => changePostStatus(false), 8000);
     });
   };
 
@@ -37,13 +37,13 @@ export default (props) => {
           class='title-section'
           value={title}
           onChange={onTitleChange}
-          placeHolder='give a title...'
+          placeHolder='Give a title...'
         />
         <Input
           class='poem-section'
           value={poem}
           onChange={onPoemChange}
-          placeHolder='write it out...'
+          placeHolder='Write it out...'
         />
         <Category selectedCategory={category} onClick={addCategory} />
         <Publish

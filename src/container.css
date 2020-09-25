@@ -130,3 +130,12 @@ body {
 .indicate-1 > div {
   color: rgb(32, 190, 211);
 }
+
+.logout {
+  margin: 46% 0% 0% 1%;
+  position: fixed;
+  background: rgb(247, 242, 242);
+  cursor: pointer;
+  padding: 0.8%;
+  border-radius: 20%;
+}

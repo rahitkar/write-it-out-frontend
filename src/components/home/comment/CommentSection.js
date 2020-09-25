@@ -13,7 +13,6 @@ export default (props) => {
   const addComment = (comment) => {
     api.addComment(comment, postId).then(
       api.getComments(postId).then((comments) => {
-        console.log(comments);
         setComments(comments);
       })
     );

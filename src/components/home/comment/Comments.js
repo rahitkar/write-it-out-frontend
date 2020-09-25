@@ -16,9 +16,8 @@ export default (props) => {
 
   return (
     <div className='comment-rapper'>
-      <div className='comments' onClick={handleOnClick}>
-        <span>{props.comments.length}</span>
-        <span>comments</span>
+      <div className='comments'>
+        <span onClick={handleOnClick}>{props.comments.length} comments</span>
       </div>
       <div className='comment-details'>{popup}</div>
     </div>

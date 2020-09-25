@@ -44,12 +44,25 @@
   cursor: not-allowed;
 }
 
-.acknowledgement-popup {
-  width: 11%;
-  padding: 1%;
-  margin-left: 53%;
+.on-post-show {
   position: fixed;
-  background-color: rgb(45, 204, 45);
+  margin: -3.8% 0% 0% 42%;
+  width: 20%;
+  background: white;
+  text-align: center;
+  padding: 1%;
+}
+
+.on-post-show > a {
+  padding-top: 1%;
+  color: black;
+}
+
+.acknowledgement-popup {
+  width: 100%;
+  padding-bottom: 1%;
+  color: rgb(134, 240, 13);
+  background-color: white;
   font-family: sans-serif;
 }
 

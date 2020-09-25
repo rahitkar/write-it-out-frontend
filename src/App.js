@@ -16,7 +16,7 @@ function App() {
   if (loggedInUserId) {
     return (
       <UserContext.Provider value={loggedInUserId}>
-        <LandingPage />;
+        <LandingPage clearUser={setUserId} />
       </UserContext.Provider>
     );
   }

@@ -11,7 +11,6 @@
 
 .like-icon {
   width: 6%;
-  margin-right: 1%;
   cursor: pointer;
   max-height: 20px;
 }
@@ -39,11 +38,11 @@
 .likes,
 .comments {
   margin-left: 2%;
-  cursor: pointer;
 }
 
 .comments :hover,
 .likes :hover {
+  cursor: pointer;
   border-bottom: 1px solid lightgray;
 }
 
@@ -52,12 +51,6 @@
   margin-right: 1%;
   color: gray;
 }
-
-/* .user-who-liked {
-  display: flex;
-  width: 30%;
-  height: 12%;
-} */
 
 .user-who-liked,
 .user-who-commented {

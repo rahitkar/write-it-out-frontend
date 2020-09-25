@@ -16,9 +16,8 @@ export default (props) => {
 
   return (
     <div className='like-rapper'>
-      <div className='likes' onClick={handleOnClick}>
-        <span>{props.likes.length}</span>
-        <span>like</span>
+      <div className='likes'>
+        <span onClick={handleOnClick}>{props.likes.length} like</span>
       </div>
       <div className='like-details'>{popup}</div>
     </div>
