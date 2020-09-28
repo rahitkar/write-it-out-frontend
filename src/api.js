@@ -1,5 +1,9 @@
 const api = {};
 
+api.getLoginLink = () => {
+  return fetch('/api/getLoginLink').then((res) => res.json());
+};
+
 api.getUser = () => {
   return fetch('/api/getUserId').then((res) => res.json());
 };
