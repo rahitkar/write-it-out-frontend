@@ -60,6 +60,9 @@
   font-family: sans-serif;
 }
 
-.comment {
-  margin-top: 1%;
+.comment > button {
+  border: 5px solid lightgray;
+  padding: 10% 22% 10% 22%;
+  border-radius: 30px;
+  outline: none;
 }
