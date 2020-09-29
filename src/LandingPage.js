@@ -5,7 +5,7 @@ import Links from './Links';
 import Home from './components/home/Home';
 import Explore from './components/explore/Explore';
 import WriteSection from './components/write/WriteSection';
-import Profile from './components/userProfile/UserProfile'; 
+import Profile from './components/profile/UserProfile';
 
 import Logout from './Logout';
 
